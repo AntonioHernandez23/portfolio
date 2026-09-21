@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--
+    ========================================================
+      FRONTEND - Plantilla HTML del Portafolio
+    ========================================================
+      Este archivo es la plantilla principal del portafolio.
+      Flask lo renderiza inyectando los datos de portfolio.json
+      en la variable {&#39;profile&#39;: {&#39;name&#39;: &#39;Antonio Hernández&#39;, &#39;title&#39;: &#39;Desarrollador Full Stack &amp; Ingeniero de Software&#39;, &#39;bio&#39;: &#39;Soy un apasionado desarrollador con experiencia en Flutter, Python, y tecnologías cloud. Me encanta crear soluciones innovadoras que resuelvan problemas reales. Actualmente enfocado en desarrollo móvil a nivel juniorcon Flutter/Firebase y arquitecturas cloud con Azure y Cloudflare.&#39;, &#39;location&#39;: &#39;Panama City&#39;, &#39;email&#39;: &#39;antonioivanoh02@gmail.com&#39;, &#39;phone&#39;: &#39;+507 6218 2660&#39;, &#39;github&#39;: &#39;https://github.com/AntonioHernandez23&#39;, &#39;linkedin&#39;: &#39;https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411&#39;, &#39;photo&#39;: &#39;images/profile/Fotopersonal.jpeg&#39;}, &#39;skills&#39;: [{&#39;name&#39;: &#39;Flutter / Dart&#39;, &#39;level&#39;: 90, &#39;category&#39;: &#39;Frontend&#39;}, {&#39;name&#39;: &#39;Python / Flask&#39;, &#39;level&#39;: 85, &#39;category&#39;: &#39;Backend&#39;}, {&#39;name&#39;: &#39;Firebase&#39;, &#39;level&#39;: 80, &#39;category&#39;: &#39;Cloud&#39;}, {&#39;name&#39;: &#39;HTML / CSS / JS&#39;, &#39;level&#39;: 85, &#39;category&#39;: &#39;Frontend&#39;}, {&#39;name&#39;: &#39;Azure Cloud&#39;, &#39;level&#39;: 70, &#39;category&#39;: &#39;Cloud&#39;}, {&#39;name&#39;: &#39;Git / GitHub&#39;, &#39;level&#39;: 80, &#39;category&#39;: &#39;Herramientas&#39;}, {&#39;name&#39;: &#39;Blender / 3D&#39;, &#39;level&#39;: 60, &#39;category&#39;: &#39;Diseño&#39;}, {&#39;name&#39;: &#39;Node.js&#39;, &#39;level&#39;: 65, &#39;category&#39;: &#39;Backend&#39;}], &#39;projects&#39;: [{&#39;id&#39;: 1, &#39;name&#39;: &#39;AI Cloud Proyecto&#39;, &#39;description&#39;: &#39;Plataforma de servicios cloud con inteligencia artificial, desplegada con Cloudflare Tunnels y Flask. Incluye frontend Flutter conectado a API REST.&#39;, &#39;technologies&#39;: [&#39;Flutter&#39;, &#39;Python&#39;, &#39;Flask&#39;, &#39;Cloudflare&#39;, &#39;Firebase&#39;], &#39;image&#39;: &#39;images/projects/milizin.jpg&#39;, &#39;github&#39;: &#39;&#39;, &#39;demo&#39;: &#39;&#39;, &#39;featured&#39;: True}, {&#39;id&#39;: 2, &#39;name&#39;: &#39;Raiden Shogun Assistants&#39;, &#39;description&#39;: &#39;Aplicación web del personaje Raiden Shogun de Genshin Impact con integración de modelo 3D VRM con Three.js y backend Flask+SocketIO. Control en tiempo real desde navegador para consultas, tareas y actividades diarias de ayuda al usuario.&#39;, &#39;technologies&#39;: [&#39;Three.js&#39;, &#39;Flask&#39;, &#39;SocketIO&#39;, &#39;Blender&#39;, &#39;VRM&#39;], &#39;image&#39;: &#39;images/projects/raiden-shogun.jpg&#39;, &#39;github&#39;: &#39;&#39;, &#39;demo&#39;: &#39;&#39;, &#39;featured&#39;: True}, {&#39;id&#39;: 3, &#39;name&#39;: &#39;Portafolio Digital&#39;, &#39;description&#39;: &#39;Este mismo portafolio. Sitio web full-stack con Flask, diseño responsive y despliegue mediante Cloudflare Tunnel para acceso universal.&#39;, &#39;technologies&#39;: [&#39;Python&#39;, &#39;Flask&#39;, &#39;HTML&#39;, &#39;CSS&#39;, &#39;Cloudflare&#39;], &#39;image&#39;: &#39;images/projects/portfolio.jpg&#39;, &#39;github&#39;: &#39;https://github.com/AntonioHernandez23/portfolio&#39;, &#39;demo&#39;: &#39;https://antoniohernandez23.github.io/portfolio/&#39;, &#39;featured&#39;: False}], &#39;education&#39;: [{&#39;institution&#39;: &#39;University / ISAE UNIVERSIDAD&#39;, &#39;degree&#39;: &#39;Ingeniería en Sistemas / Desarrollo de Software&#39;, &#39;period&#39;: &#39;2022 - Presente&#39;, &#39;description&#39;: &#39;Formación en desarrollo de software, bases de datos, redes y arquitectura de sistemas y seguimos en constante aprendizaje.&#39;}], &#39;experience&#39;: [{&#39;company&#39;: &#39;Freelance / Proyectos Personales&#39;, &#39;role&#39;: &#39;Desarrollador Full Stack&#39;, &#39;period&#39;: &#39;2023 - Presente&#39;, &#39;description&#39;: &#39;Desarrollo de aplicaciones móviles con Flutter, APIs REST con Flask/Python, e infraestructura cloud con Azure y Cloudflare.&#39;, &#39;technologies&#39;: [&#39;Flutter&#39;, &#39;Python&#39;, &#39;Firebase&#39;, &#39;Azure&#39;, &#39;Cloudflare&#39;]}]}.
+
+      COMO EDITAR EL FRONTEND:
+      - Cambios de CONTENIDO: edita data/portfolio.json
+        (NO necesitas tocar este archivo para cambiar textos)
+      - Cambios de ESTILO: edita static/css/style.css
+      - Cambios de COMPORTAMIENTO: edita static/js/main.js
+      - Cambios de ESTRUCTURA: edita este archivo
+    ========================================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Hernández - Portafolio Digital</title>
+    <link rel="stylesheet" href="./static/css/style.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">AH</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre Mi</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO / CABECERA ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-photo-wrapper">
+                <div class="hero-photo-ring"></div>
+                <!-- FOTO DE PERFIL: cambia la ruta en portfolio.json -> profile.photo -->
+                <img
+                    src="./static/images/profile/Fotopersonal.jpeg"
+                    alt="Antonio Hernández"
+                    class="hero-photo"
+                    onerror="this.style.display='none'"
+                >
+                <!-- Si no hay foto, muestra un icono por defecto -->
+                <div class="hero-photo-placeholder" id="photoPlaceholder">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <h1 class="hero-name">Antonio Hernández</h1>
+            <p class="hero-title">Desarrollador Full Stack &amp; Ingeniero de Software</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#contact" class="btn btn-outline">Contactame</a>
+            </div>
+            <div class="hero-scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE MI ========== -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mi</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Soy un apasionado desarrollador con experiencia en Flutter, Python, y tecnologías cloud. Me encanta crear soluciones innovadoras que resuelvan problemas reales. Actualmente enfocado en desarrollo móvil a nivel juniorcon Flutter/Firebase y arquitecturas cloud con Azure y Cloudflare.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Panama City</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>antonioivanoh02@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="about-social">
+                        <a href="https://github.com/AntonioHernandez23" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Proyectos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-label">Habilidades</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="1">0</span>
+                        <span class="stat-label">Experiencias</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Flutter / Dart</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="90"></div>
+                    </div>
+                    <span class="skill-category">Frontend</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Python / Flask</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85"></div>
+                    </div>
+                    <span class="skill-category">Backend</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Firebase</span>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="80"></div>
+                    </div>
+                    <span class="skill-category">Cloud</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML / CSS / JS</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85"></div>
+                    </div>
+                    <span class="skill-category">Frontend</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Azure Cloud</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="70"></div>
+                    </div>
+                    <span class="skill-category">Cloud</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Git / GitHub</span>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="80"></div>
+                    </div>
+                    <span class="skill-category">Herramientas</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Blender / 3D</span>
+                        <span class="skill-level">60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="60"></div>
+                    </div>
+                    <span class="skill-category">Diseño</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-level">65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="65"></div>
+                    </div>
+                    <span class="skill-category">Backend</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROYECTOS ========== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card featured">
+                    <div class="project-image-wrapper">
+                        <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        <img
+                            src="./static/images/projects/milizin.jpg"
+                            alt="AI Cloud Proyecto"
+                            class="project-image"
+                            onerror="this.parentElement.classList.add('no-image')"
+                        >
+                        
+                        <span class="project-badge">Destacado</span>
+                        
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">AI Cloud Proyecto</h3>
+                        <p class="project-desc">Plataforma de servicios cloud con inteligencia artificial, desplegada con Cloudflare Tunnels y Flask. Incluye frontend Flutter conectado a API REST.</p>
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">Flutter</span>
+                            
+                            <span class="tech-tag">Python</span>
+                            
+                            <span class="tech-tag">Flask</span>
+                            
+                            <span class="tech-tag">Cloudflare</span>
+                            
+                            <span class="tech-tag">Firebase</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card featured">
+                    <div class="project-image-wrapper">
+                        <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        <img
+                            src="./static/images/projects/raiden-shogun.jpg"
+                            alt="Raiden Shogun Assistants"
+                            class="project-image"
+                            onerror="this.parentElement.classList.add('no-image')"
+                        >
+                        
+                        <span class="project-badge">Destacado</span>
+                        
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Raiden Shogun Assistants</h3>
+                        <p class="project-desc">Aplicación web del personaje Raiden Shogun de Genshin Impact con integración de modelo 3D VRM con Three.js y backend Flask+SocketIO. Control en tiempo real desde navegador para consultas, tareas y actividades diarias de ayuda al usuario.</p>
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">Three.js</span>
+                            
+                            <span class="tech-tag">Flask</span>
+                            
+                            <span class="tech-tag">SocketIO</span>
+                            
+                            <span class="tech-tag">Blender</span>
+                            
+                            <span class="tech-tag">VRM</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card ">
+                    <div class="project-image-wrapper">
+                        <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        <img
+                            src="./static/images/projects/portfolio.jpg"
+                            alt="Portafolio Digital"
+                            class="project-image"
+                            onerror="this.parentElement.classList.add('no-image')"
+                        >
+                        
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Portafolio Digital</h3>
+                        <p class="project-desc">Este mismo portafolio. Sitio web full-stack con Flask, diseño responsive y despliegue mediante Cloudflare Tunnel para acceso universal.</p>
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">Python</span>
+                            
+                            <span class="tech-tag">Flask</span>
+                            
+                            <span class="tech-tag">HTML</span>
+                            
+                            <span class="tech-tag">CSS</span>
+                            
+                            <span class="tech-tag">Cloudflare</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            <a href="https://github.com/AntonioHernandez23/portfolio" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Codigo
+                            </a>
+                            
+                            
+                            <a href="https://antoniohernandez23.github.io/portfolio/" target="_blank" class="project-link link-demo">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCIA ========== -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experiencia</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Desarrollador Full Stack</h3>
+                        <h4>Freelance / Proyectos Personales</h4>
+                        <span class="timeline-period">2023 - Presente</span>
+                        <p>Desarrollo de aplicaciones móviles con Flutter, APIs REST con Flask/Python, e infraestructura cloud con Azure y Cloudflare.</p>
+                        
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">Flutter</span>
+                            
+                            <span class="tech-tag">Python</span>
+                            
+                            <span class="tech-tag">Firebase</span>
+                            
+                            <span class="tech-tag">Azure</span>
+                            
+                            <span class="tech-tag">Cloudflare</span>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Ingeniería en Sistemas / Desarrollo de Software</h3>
+                        <h4>University / ISAE UNIVERSIDAD</h4>
+                        <span class="timeline-period">2022 - Presente</span>
+                        <p>Formación en desarrollo de software, bases de datos, redes y arquitectura de sistemas y seguimos en constante aprendizaje.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+                    <div class="contact-items">
+                        <a href="mailto:antonioivanoh02@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>antonioivanoh02@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/AntonioHernandez23" target="_blank" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Antonio Hernández. Todos los derechos reservados.</p>
+            <p class="footer-tech">Construido con Flask + HTML/CSS/JS | Desplegado con Cloudflare</p>
+        </div>
+    </footer>
+
+    <script src="./static/js/main.js?v=2"></script>
+</body>
+</html>
