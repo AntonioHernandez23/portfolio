@@ -170,7 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = data.get('message');
 
             // Abrir mailto con los datos (sin servidor de email)
-            const mailtoLink = `mailto:ant@example.com?subject=Contacto de ${name}&body=${encodeURIComponent(message)}%0A%0ADe: ${name} <${email}>`;
+            const destino = contactForm.dataset.email || 'contacto@example.com';
+            const mailtoLink = `mailto:${destino}?subject=Contacto de ${name}&body=${encodeURIComponent(message)}%0A%0ADe: ${name} <${email}>`;
             window.location.href = mailtoLink;
 
             contactForm.reset();

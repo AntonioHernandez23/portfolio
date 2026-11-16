@@ -219,6 +219,8 @@ img {
     text-align: center;
     position: relative;
     overflow: hidden;
+    /* Espacio para que la navbar fija no tape la foto de perfil */
+    padding: 100px 24px 60px;
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a3e 50%, var(--bg-dark) 100%);
 }
 
@@ -578,8 +580,41 @@ img {
     transform: scale(1.05);
 }
 
+.project-image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 24px;
+    text-align: center;
+    color: var(--text-muted);
+    background: linear-gradient(135deg, #1a1a3e, #2a1a5e);
+    z-index: 0;
+}
+
+.project-image-placeholder i {
+    font-size: 2.2rem;
+    opacity: 0.7;
+}
+
+.project-image-placeholder span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
 .no-image .project-image {
     display: none;
+}
+
+.no-image .project-image-placeholder {
+    display: flex;
+    z-index: 1;
 }
 
 .project-badge {
@@ -630,7 +665,9 @@ img {
 
 .project-links {
     display: flex;
-    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
 }
 
 .project-link {
@@ -649,6 +686,110 @@ img {
 
 .link-demo:hover {
     color: var(--accent);
+}
+
+/* --- Proyecto destacado a todo el ancho --- */
+.project-card.project-wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.project-wide .project-image-wrapper {
+    height: 100%;
+    min-height: 420px;
+}
+
+.project-wide .project-info {
+    padding: 32px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-wide .project-name {
+    font-size: 1.7rem;
+    line-height: 1.25;
+}
+
+.project-subtitle {
+    color: var(--secondary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: -4px 0 14px;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-bottom: 16px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.project-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.project-meta i {
+    color: var(--primary);
+}
+
+.project-highlights {
+    list-style: none;
+    margin: 0 0 18px;
+    display: grid;
+    gap: 8px;
+}
+
+.project-highlights li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.project-highlights li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.link-download {
+    background: rgba(108, 99, 255, 0.14);
+    border: 1px solid rgba(108, 99, 255, 0.55);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.link-download:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.download-size {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 2px;
+}
+
+.link-download:hover .download-size {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* ===== 8. TIMELINE ===== */
@@ -831,6 +972,32 @@ img {
 }
 
 /* ===== 12. RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .project-card.project-wide {
+        grid-template-columns: 1fr;
+    }
+
+    .project-wide .project-image-wrapper {
+        height: 260px;
+        min-height: 0;
+    }
+
+    .project-wide .project-info {
+        padding: 26px 22px;
+    }
+
+    .project-wide .project-name {
+        font-size: 1.4rem;
+    }
+
+    /* En movil el badge tapaba el logo del poster: se mueve abajo */
+    .project-wide .project-badge {
+        top: auto;
+        bottom: 12px;
+        right: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-name { font-size: 2.2rem; }
     .hero-title { font-size: 1.1rem; }

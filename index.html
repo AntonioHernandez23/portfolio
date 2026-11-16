@@ -7,7 +7,7 @@
     ========================================================
       Este archivo es la plantilla principal del portafolio.
       Flask lo renderiza inyectando los datos de portfolio.json
-      en la variable {&#39;profile&#39;: {&#39;name&#39;: &#39;Antonio Hernández&#39;, &#39;title&#39;: &#39;Desarrollador Full Stack &amp; Ingeniero de Software&#39;, &#39;bio&#39;: &#39;Soy un apasionado desarrollador con experiencia en Flutter, Python, y tecnologías cloud. Me encanta crear soluciones innovadoras que resuelvan problemas reales. Actualmente enfocado en desarrollo móvil a nivel juniorcon Flutter/Firebase y arquitecturas cloud con Azure y Cloudflare.&#39;, &#39;location&#39;: &#39;Panama City&#39;, &#39;email&#39;: &#39;antonioivanoh02@gmail.com&#39;, &#39;phone&#39;: &#39;+507 6218 2660&#39;, &#39;github&#39;: &#39;https://github.com/AntonioHernandez23&#39;, &#39;linkedin&#39;: &#39;https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411&#39;, &#39;photo&#39;: &#39;images/profile/Fotopersonal.jpeg&#39;}, &#39;skills&#39;: [{&#39;name&#39;: &#39;Flutter / Dart&#39;, &#39;level&#39;: 90, &#39;category&#39;: &#39;Frontend&#39;}, {&#39;name&#39;: &#39;Python / Flask&#39;, &#39;level&#39;: 85, &#39;category&#39;: &#39;Backend&#39;}, {&#39;name&#39;: &#39;Firebase&#39;, &#39;level&#39;: 80, &#39;category&#39;: &#39;Cloud&#39;}, {&#39;name&#39;: &#39;HTML / CSS / JS&#39;, &#39;level&#39;: 85, &#39;category&#39;: &#39;Frontend&#39;}, {&#39;name&#39;: &#39;Azure Cloud&#39;, &#39;level&#39;: 70, &#39;category&#39;: &#39;Cloud&#39;}, {&#39;name&#39;: &#39;Git / GitHub&#39;, &#39;level&#39;: 80, &#39;category&#39;: &#39;Herramientas&#39;}, {&#39;name&#39;: &#39;Blender / 3D&#39;, &#39;level&#39;: 60, &#39;category&#39;: &#39;Diseño&#39;}, {&#39;name&#39;: &#39;Node.js&#39;, &#39;level&#39;: 65, &#39;category&#39;: &#39;Backend&#39;}], &#39;projects&#39;: [{&#39;id&#39;: 1, &#39;name&#39;: &#39;AI Cloud Proyecto&#39;, &#39;description&#39;: &#39;Plataforma de servicios cloud con inteligencia artificial, desplegada con Cloudflare Tunnels y Flask. Incluye frontend Flutter conectado a API REST.&#39;, &#39;technologies&#39;: [&#39;Flutter&#39;, &#39;Python&#39;, &#39;Flask&#39;, &#39;Cloudflare&#39;, &#39;Firebase&#39;], &#39;image&#39;: &#39;images/projects/milizin.jpg&#39;, &#39;github&#39;: &#39;&#39;, &#39;demo&#39;: &#39;&#39;, &#39;featured&#39;: True}, {&#39;id&#39;: 2, &#39;name&#39;: &#39;Raiden Shogun Assistants&#39;, &#39;description&#39;: &#39;Aplicación web del personaje Raiden Shogun de Genshin Impact con integración de modelo 3D VRM con Three.js y backend Flask+SocketIO. Control en tiempo real desde navegador para consultas, tareas y actividades diarias de ayuda al usuario.&#39;, &#39;technologies&#39;: [&#39;Three.js&#39;, &#39;Flask&#39;, &#39;SocketIO&#39;, &#39;Blender&#39;, &#39;VRM&#39;], &#39;image&#39;: &#39;images/projects/raiden-shogun.jpg&#39;, &#39;github&#39;: &#39;&#39;, &#39;demo&#39;: &#39;&#39;, &#39;featured&#39;: True}, {&#39;id&#39;: 3, &#39;name&#39;: &#39;Portafolio Digital&#39;, &#39;description&#39;: &#39;Este mismo portafolio. Sitio web full-stack con Flask, diseño responsive y despliegue mediante Cloudflare Tunnel para acceso universal.&#39;, &#39;technologies&#39;: [&#39;Python&#39;, &#39;Flask&#39;, &#39;HTML&#39;, &#39;CSS&#39;, &#39;Cloudflare&#39;], &#39;image&#39;: &#39;images/projects/portfolio.jpg&#39;, &#39;github&#39;: &#39;https://github.com/AntonioHernandez23/portfolio&#39;, &#39;demo&#39;: &#39;https://antoniohernandez23.github.io/portfolio/&#39;, &#39;featured&#39;: False}], &#39;education&#39;: [{&#39;institution&#39;: &#39;University / ISAE UNIVERSIDAD&#39;, &#39;degree&#39;: &#39;Ingeniería en Sistemas / Desarrollo de Software&#39;, &#39;period&#39;: &#39;2022 - Presente&#39;, &#39;description&#39;: &#39;Formación en desarrollo de software, bases de datos, redes y arquitectura de sistemas y seguimos en constante aprendizaje.&#39;}], &#39;experience&#39;: [{&#39;company&#39;: &#39;Freelance / Proyectos Personales&#39;, &#39;role&#39;: &#39;Desarrollador Full Stack&#39;, &#39;period&#39;: &#39;2023 - Presente&#39;, &#39;description&#39;: &#39;Desarrollo de aplicaciones móviles con Flutter, APIs REST con Flask/Python, e infraestructura cloud con Azure y Cloudflare.&#39;, &#39;technologies&#39;: [&#39;Flutter&#39;, &#39;Python&#39;, &#39;Firebase&#39;, &#39;Azure&#39;, &#39;Cloudflare&#39;]}]}.
+      en la variable "data".
 
       COMO EDITAR EL FRONTEND:
       - Cambios de CONTENIDO: edita data/portfolio.json
@@ -20,7 +20,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antonio Hernández - Portafolio Digital</title>
-    <link rel="stylesheet" href="./static/css/style.css?v=2">
+    <meta name="description" content="Antonio Hernández — Desarrollador Full Stack &amp; Programador de Videojuegos (C++ / Unreal). Proyectos de desarrollo web, móvil y videojuegos (Unreal Engine 5 / C++).">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Antonio Hernández — Portafolio">
+    <meta property="og:description" content="Desarrollador Full Stack &amp; Programador de Videojuegos (C++ / Unreal)">
+    <meta property="og:image" content="https://antoniohernandez23.github.io/portfolio/static/images/projects/panfighters.jpg">
+    <link rel="stylesheet" href="static/css/style.css?v=1794857272">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -53,7 +58,7 @@
                 <div class="hero-photo-ring"></div>
                 <!-- FOTO DE PERFIL: cambia la ruta en portfolio.json -> profile.photo -->
                 <img
-                    src="./static/images/profile/Fotopersonal.jpeg"
+                    src="static/images/profile/Fotopersonal.jpeg"
                     alt="Antonio Hernández"
                     class="hero-photo"
                     onerror="this.style.display='none'"
@@ -64,7 +69,7 @@
                 </div>
             </div>
             <h1 class="hero-name">Antonio Hernández</h1>
-            <p class="hero-title">Desarrollador Full Stack &amp; Ingeniero de Software</p>
+            <p class="hero-title">Desarrollador Full Stack &amp; Programador de Videojuegos (C++ / Unreal)</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
                 <a href="#contact" class="btn btn-outline">Contactame</a>
@@ -81,7 +86,7 @@
             <h2 class="section-title">Sobre Mi</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Soy un apasionado desarrollador con experiencia en Flutter, Python, y tecnologías cloud. Me encanta crear soluciones innovadoras que resuelvan problemas reales. Actualmente enfocado en desarrollo móvil a nivel juniorcon Flutter/Firebase y arquitecturas cloud con Azure y Cloudflare.</p>
+                    <p>Soy un apasionado desarrollador con experiencia en Flutter, Python y tecnologías cloud, y con un pie en el desarrollo de videojuegos con C++ y Unreal Engine 5. Me encanta crear soluciones innovadoras que resuelvan problemas reales. Actualmente enfocado en desarrollo móvil con Flutter/Firebase, arquitecturas cloud con Azure y Cloudflare, y gameplay en Unreal.</p>
                     <div class="about-info">
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -93,25 +98,29 @@
                         </div>
                     </div>
                     <div class="about-social">
-                        <a href="https://github.com/AntonioHernandez23" target="_blank" class="social-link" title="GitHub">
+                        
+                        <a href="https://github.com/AntonioHernandez23" target="_blank" rel="noopener" class="social-link" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411" target="_blank" class="social-link" title="LinkedIn">
+                        
+                        
+                        <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
+                        
                     </div>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
-                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-number" data-count="5">0</span>
                         <span class="stat-label">Proyectos</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-number" data-count="10">0</span>
                         <span class="stat-label">Habilidades</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-count="1">0</span>
+                        <span class="stat-number" data-count="2">0</span>
                         <span class="stat-label">Experiencias</span>
                     </div>
                 </div>
@@ -213,6 +222,28 @@
                     <span class="skill-category">Backend</span>
                 </div>
                 
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">C++</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="70"></div>
+                    </div>
+                    <span class="skill-category">Game Dev</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Unreal Engine 5</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="70"></div>
+                    </div>
+                    <span class="skill-category">Game Dev</span>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -223,22 +254,124 @@
             <h2 class="section-title">Proyectos</h2>
             <div class="projects-grid">
                 
-                <div class="project-card featured">
-                    <div class="project-image-wrapper">
+                <div class="project-card featured project-wide">
+                    <div class="project-image-wrapper ">
                         <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        
                         <img
-                            src="./static/images/projects/milizin.jpg"
+                            src="static/images/projects/panfighters.jpg"
+                            alt="PanFighters: Director&#39;s Cut"
+                            class="project-image"
+                            onerror="this.parentElement.classList.add('no-image')"
+                        >
+                        
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-code"></i>
+                            <span>PanFighters: Director&#39;s Cut</span>
+                        </div>
+                        
+                        <span class="project-badge">Destacado</span>
+                        
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">PanFighters: Director&#39;s Cut</h3>
+                        
+                        <p class="project-subtitle">Juego de pelea 3D en primera persona — Epic AI MegaJam 2026</p>
+                        
+                        <p class="project-desc">Gallos boxeadores, power-ups que caen del cielo y combate al mejor de 3 rounds. Un juego de pelea arcade en primera persona hecho en Unreal Engine 5 con C++ y Slate UI, desarrollado junto al equipo THEBOYS para la Epic AI MegaJam 2026 y publicado en itch.io para Windows.</p>
+
+                        
+                        <div class="project-meta">
+                            
+                            <span><i class="fas fa-user-gear"></i>Programador de gameplay (C++)</span>
+                            
+                            
+                            <span><i class="fas fa-people-group"></i>Equipo THEBOYS · 5 integrantes</span>
+                            
+                            
+                            <span><i class="fas fa-calendar"></i>Noviembre 2026</span>
+                            
+                        </div>
+                        
+
+                        
+                        <ul class="project-highlights">
+                            
+                            <li>Combate al mejor de 3 rounds: jab, cross y hooks con retroalimentación de impacto, knockback y stun; bloqueo sostenido, sprint y salto.</li>
+                            
+                            <li>Power-ups aéreos con identidad local: Ají Chombo (daño), Taza de Café (velocidad y stamina) y Patacón Dorado (vida + escudo).</li>
+                            
+                            <li>3 campeones jugables (Pollo Blanco, Pollo Chocolate y Gallo Gato) y 3 escenarios: El Ranchito, El Campo Llano y El Sartén.</li>
+                            
+                            <li>HUD, menús y opciones construidos con Slate UI en C++; look cartoon con iluminación global Lumen.</li>
+                            
+                            <li>Build empaquetado para Windows 11 y control de versiones del equipo con Diversion.</li>
+                            
+                        </ul>
+                        
+
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">C++</span>
+                            
+                            <span class="tech-tag">Unreal Engine 5</span>
+                            
+                            <span class="tech-tag">Slate UI</span>
+                            
+                            <span class="tech-tag">Lumen</span>
+                            
+                            <span class="tech-tag">Blueprints</span>
+                            
+                            <span class="tech-tag">Diversion</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                            <a href="https://elaii4.itch.io/panfighters" target="_blank" class="project-link link-demo">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            
+                            
+                            <a href="https://elaii4.itch.io/panfighters" target="_blank" rel="noopener"
+                               class="project-link link-download">
+                                <i class="fas fa-download"></i>
+                                Descargar demo en itch.io
+                                <span class="download-size">Windows 64 bits</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card featured ">
+                    <div class="project-image-wrapper ">
+                        <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        
+                        <img
+                            src="static/images/projects/ai-cloud.jpg"
                             alt="AI Cloud Proyecto"
                             class="project-image"
                             onerror="this.parentElement.classList.add('no-image')"
                         >
+                        
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-code"></i>
+                            <span>AI Cloud Proyecto</span>
+                        </div>
                         
                         <span class="project-badge">Destacado</span>
                         
                     </div>
                     <div class="project-info">
                         <h3 class="project-name">AI Cloud Proyecto</h3>
+                        
                         <p class="project-desc">Plataforma de servicios cloud con inteligencia artificial, desplegada con Cloudflare Tunnels y Flask. Incluye frontend Flutter conectado a API REST.</p>
+
+                        
+
+                        
+
                         <div class="project-tech">
                             
                             <span class="tech-tag">Flutter</span>
@@ -255,26 +388,43 @@
                         <div class="project-links">
                             
                             
+                            <a href="https://aicloud.loan" target="_blank" class="project-link link-demo">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            
+                            
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card featured">
-                    <div class="project-image-wrapper">
+                <div class="project-card featured ">
+                    <div class="project-image-wrapper ">
                         <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        
                         <img
-                            src="./static/images/projects/raiden-shogun.jpg"
+                            src="static/images/projects/raiden-shogun.jpg"
                             alt="Raiden Shogun Assistants"
                             class="project-image"
                             onerror="this.parentElement.classList.add('no-image')"
                         >
+                        
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-code"></i>
+                            <span>Raiden Shogun Assistants</span>
+                        </div>
                         
                         <span class="project-badge">Destacado</span>
                         
                     </div>
                     <div class="project-info">
                         <h3 class="project-name">Raiden Shogun Assistants</h3>
+                        
                         <p class="project-desc">Aplicación web del personaje Raiden Shogun de Genshin Impact con integración de modelo 3D VRM con Three.js y backend Flask+SocketIO. Control en tiempo real desde navegador para consultas, tareas y actividades diarias de ayuda al usuario.</p>
+
+                        
+
+                        
+
                         <div class="project-tech">
                             
                             <span class="tech-tag">Three.js</span>
@@ -291,24 +441,77 @@
                         <div class="project-links">
                             
                             
+                            
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card ">
-                    <div class="project-image-wrapper">
+                <div class="project-card  ">
+                    <div class="project-image-wrapper no-image">
                         <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-code"></i>
+                            <span>Milizin VRM</span>
+                        </div>
+                        
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Milizin VRM</h3>
+                        
+                        <p class="project-desc">Aplicación web para animación de avatares 3D VRM con Three.js y backend Flask+SocketIO. Control en tiempo real desde navegador.</p>
+
+                        
+
+                        
+
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">Three.js</span>
+                            
+                            <span class="tech-tag">Flask</span>
+                            
+                            <span class="tech-tag">SocketIO</span>
+                            
+                            <span class="tech-tag">Blender</span>
+                            
+                            <span class="tech-tag">VRM</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card  ">
+                    <div class="project-image-wrapper ">
+                        <!-- IMAGEN DEL PROYECTO: cambia en portfolio.json -> projects[].image -->
+                        
                         <img
-                            src="./static/images/projects/portfolio.jpg"
+                            src="static/images/projects/portfolio.jpg"
                             alt="Portafolio Digital"
                             class="project-image"
                             onerror="this.parentElement.classList.add('no-image')"
                         >
                         
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-code"></i>
+                            <span>Portafolio Digital</span>
+                        </div>
+                        
                     </div>
                     <div class="project-info">
                         <h3 class="project-name">Portafolio Digital</h3>
-                        <p class="project-desc">Este mismo portafolio. Sitio web full-stack con Flask, diseño responsive y despliegue mediante Cloudflare Tunnel para acceso universal.</p>
+                        
+                        <p class="project-desc">Este mismo portafolio. Sitio web full-stack con Flask y diseño responsive, publicado como sitio estático en GitHub Pages y con despliegue alterno vía Cloudflare Tunnel para la versión con servidor.</p>
+
+                        
+
+                        
+
                         <div class="project-tech">
                             
                             <span class="tech-tag">Python</span>
@@ -318,6 +521,8 @@
                             <span class="tech-tag">HTML</span>
                             
                             <span class="tech-tag">CSS</span>
+                            
+                            <span class="tech-tag">GitHub Pages</span>
                             
                             <span class="tech-tag">Cloudflare</span>
                             
@@ -333,6 +538,7 @@
                                 <i class="fas fa-external-link-alt"></i> Demo
                             </a>
                             
+                            
                         </div>
                     </div>
                 </div>
@@ -346,6 +552,31 @@
         <div class="container">
             <h2 class="section-title">Experiencia</h2>
             <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Programador de gameplay — PanFighters: Director&#39;s Cut</h3>
+                        <h4>Epic AI MegaJam 2026 · Equipo THEBOYS</h4>
+                        <span class="timeline-period">Noviembre 2026</span>
+                        <p>Desarrollo de un juego de pelea 3D en primera persona con gallos boxeadores en Unreal Engine 5, presentado a la Epic AI MegaJam 2026 y publicado en itch.io. Trabajo en equipo de 5 personas con control de versiones en Diversion: lógica de combate en C++, power-ups, HUD y menús con Slate UI, y empaquetado del build para Windows.</p>
+                        
+                        <div class="project-tech">
+                            
+                            <span class="tech-tag">C++</span>
+                            
+                            <span class="tech-tag">Unreal Engine 5</span>
+                            
+                            <span class="tech-tag">Slate UI</span>
+                            
+                            <span class="tech-tag">Lumen</span>
+                            
+                            <span class="tech-tag">Diversion</span>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -378,9 +609,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Ingeniería en Sistemas / Desarrollo de Software</h3>
-                        <h4>University / ISAE UNIVERSIDAD</h4>
+                        <h4>ISAE Universidad (Panamá)</h4>
                         <span class="timeline-period">2022 - Presente</span>
-                        <p>Formación en desarrollo de software, bases de datos, redes y arquitectura de sistemas y seguimos en constante aprendizaje.</p>
+                        <p>Formación en desarrollo de software, bases de datos, redes y arquitectura de sistemas, en constante aprendizaje.</p>
                     </div>
                 </div>
                 
@@ -400,17 +631,21 @@
                             <i class="fas fa-envelope"></i>
                             <span>antonioivanoh02@gmail.com</span>
                         </a>
-                        <a href="https://github.com/AntonioHernandez23" target="_blank" class="contact-item">
+                        
+                        <a href="https://github.com/AntonioHernandez23" target="_blank" rel="noopener" class="contact-item">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411" target="_blank" class="contact-item">
+                        
+                        
+                        <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-37977b411" target="_blank" rel="noopener" class="contact-item">
                             <i class="fab fa-linkedin-in"></i>
                             <span>LinkedIn</span>
                         </a>
+                        
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" data-email="antonioivanoh02@gmail.com">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Tu nombre" required>
                     </div>
@@ -436,6 +671,6 @@
         </div>
     </footer>
 
-    <script src="./static/js/main.js?v=2"></script>
+    <script src="static/js/main.js?v=1794857272"></script>
 </body>
 </html>
